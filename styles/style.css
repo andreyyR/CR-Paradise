@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Variables de color - Bandera de Costa Rica */
+:root {
+    --cr-blue: #002B7F;   /* Azul de la bandera */
+    --cr-red: #CE1126;    /* Rojo de la bandera */
+    --cr-white: #FFFFFF;  /* Blanco de la bandera */
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--cr-blue);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--cr-red);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('C:/Users/Andrey/Downloads/camping-website/images/camping1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 3rem;
+    border-radius: 15px;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--cr-red);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--cr-red);
+    color: var(--cr-white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: #b30e21; /* Versión más oscura del rojo */
+}
+
+/* Secciones generales */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--cr-blue);
+}
+
+/* About Section */
+#about p {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Amenities Section */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.amenity-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--cr-white);
+    border-radius: 10px;
+    border: 2px solid var(--cr-blue);
+    transition: transform 0.3s;
+}
+
+.amenity-item:hover {
+    transform: translateY(-5px);
+}
+
+.amenity-item i {
+    font-size: 2.5rem;
+    color: var(--cr-red);
+    margin-bottom: 1rem;
+}
+
+.amenity-item h3 {
+    margin-bottom: 1rem;
+    color: var(--cr-blue);
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Gallery hover effects */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,43,127,0.2), rgba(206,17,38,0.2));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+/* Activities Section */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.activity-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--cr-white);
+    border-radius: 10px;
+    border: 2px solid var(--cr-blue);
+    transition: transform 0.3s;
+}
+
+.activity-item:hover {
+    transform: translateY(-5px);
+}
+
+.activity-item i {
+    font-size: 2.5rem;
+    color: var(--cr-red);
+    margin-bottom: 1rem;
+}
+
+.activity-item h3 {
+    margin-bottom: 1rem;
+    color: var(--cr-blue);
+}
+
+/* Reservation Form */
+.reservation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--cr-white);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid var(--cr-blue);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--cr-blue);
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    background-color: var(--cr-blue);
+    color: var(--cr-white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #002266; /* Versión más oscura del azul */
+}
+
+/* Footer */
+footer {
+    background-color: var(--cr-blue);
+    color: var(--cr-white);
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cr-red);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: var(--cr-white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: var(--cr-white);
+    transform: translateY(-3px);
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.whatsapp-float {
+    animation: bounce 2s infinite;
+}
+
+/* Ajuste responsivo para móviles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .amenity-item,
+    .activity-item {
+        padding: 1.5rem;
+    }
+}
